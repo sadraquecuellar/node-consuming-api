@@ -1,9 +1,10 @@
-const cors = require('cors')
+const cors = require('cors');
 const express = require('express');
-const app = express()
-const axios = require('axios')
+const axios = require('axios');
 
-app.use(cors())
+const app = express();
+
+app.use(cors());
 
 app.get('/',async(req, res) =>{
 
@@ -19,9 +20,6 @@ app.get('/',async(req, res) =>{
   } catch (error) {
     console.error(error)
   }
-
-  
-  
  
 })
 
