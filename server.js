@@ -10,11 +10,11 @@ app.get('/',async(req, res) =>{
 
   try {
     //response é a resposta do axios, mas eu tiro o data de dentro
-    const {data} = await axios('https://jsonplaceholder.typicode.com/users')
-    // return res.json([
-    //   {name: 'jeff'},
-    //   {name: 'xxxx'}
-    // ])
+    // const {data} = await axios('https://jsonplaceholder.typicode.com/users')
+    return res.json([
+      {name: 'jeff'},
+      {name: 'xxxx'}
+    ])
 
     return res.json(data)  
   } catch (error) {
@@ -23,4 +23,4 @@ app.get('/',async(req, res) =>{
  
 })
 
-app.listen('4567')
+app.listen('3000')
