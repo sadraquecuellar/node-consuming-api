@@ -6,8 +6,9 @@
   
   async function getContent(){
     try{
-      const response = await fetch('');
+      const response = await fetch('http://localhost:3333/impress');
       const data = await response.json()
+      console.log(data);
       show(data)
     }catch(error){
       console.error(error)
@@ -16,13 +17,24 @@
 
   getContent()
 
-  function show(users){
+  function show(data){
     let output = ''
 
-    for( let user of users){
-      output += `<li>${user.name}</li>`
-    }
+    output += `<li>${data.pedido.name}</li>
+              <li>${data.pedido.address}</li>
+              <li>${data.pedido.reference}</li>
+              <li>${data.pedido.order}</li>
+              <li>${data.pedido.observation}</li>`
+    
     document.querySelector('main').innerHTML= output
   }
+  // function show(users){
+  //   let output = ''
+
+  //   for( let user of users){
+  //     output += `<li>${user.name}</li>`
+  //   }
+  //   document.querySelector('main').innerHTML= output
+  // }
   
 </script>
